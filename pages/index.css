@@ -1,0 +1,14 @@
+@import url('../vendor/normalize.css');
+@import url('../vendor/fonts/fonts.css');
+
+@import url('../blocks/page/page.css');
+
+@import url('../blocks/logo/logo.css');
+
+@import url('../blocks/intro/intro.css');
+
+@import url('../blocks/button/button.css');
+
+@import url('../blocks/text-align/_type/text-align_type_left.css');
+@import url('../blocks/text-align/_type/text-align_type_center.css');
+@import url('../blocks/text-align/_type/text-align_type_right.css');

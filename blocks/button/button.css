@@ -1,0 +1,28 @@
+.button {
+  box-sizing: border-box;
+  width: 263px;
+  height: 70px;
+  border-radius: 66px;
+  background: #060606;
+  color: #ffffff;
+  padding: 0 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button_style_stroke {
+  background-color: transparent;
+  color: #303030;
+  border: 2px solid #303030;
+}
+
+.button__label {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20.8px;
+  width: 165px;
+  display: inline-block;
+}

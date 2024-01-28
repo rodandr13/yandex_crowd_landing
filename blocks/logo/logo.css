@@ -1,0 +1,18 @@
+.logo {
+  display: flex;
+  gap: 6.25px;
+}
+
+.logo__image {
+  width: 92px;
+  height: 33px;
+}
+
+.logo__title {
+  font-weight: 700;
+  width: 147px;
+  color: #595653;
+  font-size: 16.651px;
+  line-height: 17.853px;
+  text-transform: uppercase;
+}
