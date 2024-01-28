@@ -21,8 +21,8 @@
 
 .intro__background-overlay {
   position: absolute;
-  background: url("/images/overlay.jpg");
-  background-position: bottom;
+  background: url("../../images/overlay.jpg");
+  background-position-y: bottom;
   height: 700px;
   width: 100%;
   mix-blend-mode: color-burn;
@@ -37,7 +37,7 @@
   justify-content: center;
   width: 1628px;
   height: 700px;
-  background:url("/images/city.png"), url("/images/chess_1.png"), url("/images/chess_2.png"), url("/images/circle.svg");
+  background:url("../../images/city.png"), url("../../images/chess_1.png"), url("../../images/chess_2.png"), url("../../images/circle.svg");
   background-repeat: no-repeat;
   background-position:0 100%, 848px 270px, 1181px 164px, 734px -47px;
 }
@@ -49,7 +49,7 @@
   justify-content: center;
   width: 1628px;
   height: 700px;
-  background: url("/images/chess_4.png"), url("/images/chess_3.png");
+  background: url("../../images/chess_4.png"), url("../../images/chess_3.png");
   background-repeat: no-repeat;
   background-position: 955px 482px, 1359px 558px;
 }
@@ -94,7 +94,7 @@
   height: 700px;
   display: flex;
   justify-content: center;
-  margin: 0 -21px 0 0;
+  margin: 0 0 0 0;
 }
 
 .intro__group-buttons {
