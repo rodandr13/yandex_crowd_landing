@@ -1,0 +1,12 @@
+.link {
+  color: #3057A2;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}

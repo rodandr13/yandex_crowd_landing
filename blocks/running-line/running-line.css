@@ -3,6 +3,7 @@
   height: 60px;
   background: #f54932;
   display: flex;
+  justify-content: center;
 }
 
 .ticker__container {
