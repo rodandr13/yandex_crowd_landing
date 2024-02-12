@@ -1,0 +1,32 @@
+.transformation {
+  box-sizing: border-box;
+  max-width: 1366px;
+  width: 100%;
+  padding: 85px 72px 100px 72px;
+}
+
+.transformation__title-container {
+  max-width: 806px;
+  margin: 0 0 54px 0;
+}
+
+.transformation__title {
+  display: inline;
+  margin-right: 15px;
+}
+
+.transformation__link {
+  width: 280px;
+  display: inline-block;
+}
+
+.transformation__steps {
+
+}
+
+
+@media screen and (max-width: 780px) {
+  .transformation {
+    padding: 85px 40px 100px 40px;
+  }
+}

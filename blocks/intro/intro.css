@@ -27,7 +27,7 @@
   width: 100%;
   mix-blend-mode: color-burn;
   z-index: 3;
-  background-position-x: 85px;
+  background-position-x: center;
 }
 
 .intro__background {
@@ -85,8 +85,6 @@
   padding: 0;
 }
 
-
-
 .intro__container-background {
   position: absolute;
   overflow: hidden;
@@ -94,7 +92,8 @@
   height: 700px;
   display: flex;
   justify-content: center;
-  margin: 0 0 0 0;
+  padding: 0 0 0 20px;
+  box-sizing: border-box;
 }
 
 .intro__group-buttons {

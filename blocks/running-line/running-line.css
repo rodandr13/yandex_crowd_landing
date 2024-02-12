@@ -28,6 +28,12 @@
   padding: 0;
   white-space: nowrap;
 }
+.ticker__text:first-child {
+  margin-left: 15px;
+}
+.ticker__text:last-child {
+  margin-right: 30px;
+}
 
 .ticker__text::after {
   content: "";

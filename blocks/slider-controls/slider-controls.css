@@ -1,0 +1,49 @@
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.slider-controls__button {
+  position: relative;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  background: #313131;
+  color: #313131;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 21px;
+}
+.slider-controls__button::after {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  content: url("../../images/arrow.svg");
+}
+
+.slider-controls__status {
+  color: #313131;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Golos Text", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+}
+
+.slider-controls__delimiter {
+  opacity: 0.6;
+}
+
+.slider-controls__total-items {
+  opacity: 0.6;
+}
+
+.slider-controls__button_type_next::after {
+  top: 8px;
+  left: 17px;
+  transform: rotate(180deg);
+}
