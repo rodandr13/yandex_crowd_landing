@@ -22,3 +22,9 @@
   line-height: 19.2px;
   opacity: 0.6;
 }
+
+@media screen and (max-width: 800px) {
+  .footer__container {
+    padding: 24px 40px 72px 40px;
+  }
+}

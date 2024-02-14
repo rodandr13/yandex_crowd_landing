@@ -11,6 +11,7 @@
     "step1 step2 step3"
     "step4 step5 step3"
     "step6 step7 step7";
+  overflow: hidden;
 }
 
 
@@ -78,12 +79,12 @@
   position: relative;
 }
 
-.grid-steps::after {
-  content: url("../../images/airplane.png");
-  position: absolute;
-  bottom: -7px;
-  right: -64px;
-}
+/*.grid-steps::after {*/
+/*  content: url("../../images/airplane.png");*/
+/*  position: absolute;*/
+/*  bottom: -7px;*/
+/*  right: -64px;*/
+/*}*/
 
 
 @media screen and (max-width: 1360px) {
@@ -98,9 +99,9 @@
     "step5 step6"
     "step7 step7";
   }
-  .grid-steps::after {
-    bottom: -47px;
-  }
+  /*.grid-steps::after {*/
+  /*  bottom: -47px;*/
+  /*}*/
 }
 
 @media screen and (max-width: 960px) {
@@ -113,12 +114,12 @@
     "step6 step6"
     "step7 step7";
   }
-  .grid-steps::after {
-    bottom: -17px;
-  }
+  /*.grid-steps::after {*/
+  /*  bottom: -17px;*/
+  /*}*/
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
   .grid-steps {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
@@ -128,9 +129,9 @@
     "step6 step6"
     "step7 step7";
   }
-  .grid-steps::after {
-    bottom: -7px;
-  }
+  /*.grid-steps::after {*/
+  /*  bottom: -7px;*/
+  /*}*/
 }
 
 @media screen and (max-width: 680px) {
@@ -143,14 +144,14 @@
     padding-left: 20px;
     gap: 0;
   }
-  .grid-steps::after {
-    content: url("../../images/airplane.png");
-    position: absolute;
-    top: -150px;
-    left: 10px;
-    bottom: unset;
-    right: unset;
-  }
+  /*.grid-steps::after {*/
+  /*  content: url("../../images/airplane.png");*/
+  /*  position: absolute;*/
+  /*  top: -150px;*/
+  /*  left: 10px;*/
+  /*  bottom: unset;*/
+  /*  right: unset;*/
+  /*}*/
   .grid-steps__step:nth-child(7) {
     padding-right: 21px;
   }
@@ -164,7 +165,7 @@
   }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 450px) {
   .grid-steps {
     box-sizing: border-box;
     width: 335px;
@@ -177,5 +178,10 @@
     margin: 0;
     padding-top: 14px;
     padding-bottom: 14px;
+    font-size: 18px;
+    line-height: 21.8px;
+  }
+  .grid-steps__step::before {
+    top: 12px;
   }
 }

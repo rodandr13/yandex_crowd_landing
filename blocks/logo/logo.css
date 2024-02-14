@@ -16,3 +16,15 @@
   line-height: 17.853px;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 450px) {
+  .logo__image {
+    width: 80px;
+    height: 27px;
+  }
+  .logo__title {
+    width: 128px;
+    font-size: 14px;
+    line-height: 14.5px;
+  }
+}

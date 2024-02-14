@@ -10,3 +10,17 @@
   line-height: 64.8px;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 800px) {
+  .section-title {
+    font-size: 42px;
+    line-height: 52px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section-title {
+    font-size: 36px;
+    line-height: 39.6px;
+  }
+}

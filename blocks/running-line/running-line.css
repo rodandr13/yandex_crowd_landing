@@ -1,12 +1,12 @@
-.ticker {
+.running-line {
   width: 100%;
-  height: 60px;
   background: #f54932;
   display: flex;
   justify-content: center;
+  padding: 18px 0;
 }
 
-.ticker__container {
+.running-line__container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-.ticker__text {
+.running-line__text {
   position: relative;
   color: #ffffff;
   font-family: "Merriweather", serif;
@@ -28,14 +28,14 @@
   padding: 0;
   white-space: nowrap;
 }
-.ticker__text:first-child {
+.running-line__text:first-child {
   margin-left: 15px;
 }
-.ticker__text:last-child {
+.running-line__text:last-child {
   margin-right: 30px;
 }
 
-.ticker__text::after {
+.running-line__text::after {
   content: "";
   width: 6px;
   height: 6px;
@@ -45,4 +45,14 @@
   transform: translateY(-50%);
   right: -17px;
   background: #ffffff;
+}
+
+@media screen and (max-width: 450px) {
+  .running-line {
+    padding: 10px 0;
+  }
+  .running-line__text {
+    font-size: 16px;
+    line-height: 17.6px;
+  }
 }

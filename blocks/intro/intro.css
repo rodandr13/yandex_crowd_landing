@@ -10,13 +10,14 @@
   margin: 0 0 62px 0;
 }
 .intro__container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 5;
   box-sizing: border-box;
   max-width: 1366px;
   width: 100%;
   padding: 26px 72px 0 72px;
-
 }
 
 .intro__background-overlay {
@@ -80,7 +81,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130%;
+  line-height: 23.4px;
   margin: 0 0 40px 0;
   padding: 0;
 }
@@ -100,3 +101,73 @@
   display: flex;
   gap: 16px;
 }
+
+@media screen and (max-width: 800px) {
+  .intro__container {
+    padding: 26px 40px 0 40px;
+  }
+  .intro__title {
+    font-size: 48px;
+    line-height: 52px;
+    margin: 0 0 24px 0;
+  }
+  .intro__container-text {
+    width: 460px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .intro__container {
+    padding: 20px 20px 0 20px;
+  }
+  .intro__logo {
+    margin: 0 0 40px 0;
+  }
+  .intro__group-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .intro__title {
+    font-size: 42px;
+    line-height: 46px;
+    margin: 0 0 24px 0;
+  }
+  .intro__container-text {
+    width: 400px;
+    align-self: center;
+  }
+  .intro__subtitle {
+    margin: 0 0 32px 0;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .intro {
+    height: 774px;
+  }
+  .intro__container-background {
+    height: 774px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .intro__title {
+    font-size: 36px;
+    line-height: 40.5px;
+    margin: 0 0 24px 0;
+  }
+  .intro__subtitle {
+    text-align: left;
+    line-height: 23.95px;
+    margin: 0 0 28px 0;
+  }
+  .intro__container-text {
+    width: 335px;
+  }
+  .intro__group-buttons {
+    gap: 12px;
+  }
+}
+
+

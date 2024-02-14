@@ -19,10 +19,10 @@
 
 .advertisement__container_style_collage {
   gap: 18px;
+  align-items: start;
 }
 
 .advertisement__image {
-
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -51,22 +51,71 @@
   /* display: contents; Стиль для мобильной версии */
 }
 
-.advertisement__text {
-
-}
-
 .advertisement__paragraph_position_right {
   max-width: 704px;
-  align-self: start;
-  margin: 11px 0 60px 0;
+  margin: 28px 0 60px 0;
 }
 
 .advertisement__table {
   margin: 0 0 48px 0;
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1250px) {
+  .advertisement__image_style_collage {
+    width: 430px;
+  }
+}
+@media screen and (max-width: 1050px) {
   .advertisement__container {
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 44px;
+  }
+  .advertisement__paragraph {
+    display: contents;
+  }
+  .advertisement__text:last-child {
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .advertisement {
+    padding: 80px 40px 100px 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .advertisement {
+    padding: 80px 20px 100px 20px;
+  }
+  .advertisement__container {
+    gap: 24px;
+    width: 100%;
+  }
+  .advertisement__table {
+    margin: 44px 0 40px 0;
+  }
+  .advertisement__text {
+    font-size: 28px;
+    line-height: 38.2px;
+    display: block;
+  }
+  .advertisement__image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .advertisement {
+    padding: 48px 20px 100px 20px;
+    gap: 33px 0;
+  }
+  .advertisement__image_style_collage {
+    width: 375px;
+    margin: 0;
+  }
+  .advertisement__table {
+    margin: 28px 0 25px 0;
   }
 }

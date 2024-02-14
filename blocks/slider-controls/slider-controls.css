@@ -18,10 +18,14 @@
   font-size: 21px;
 }
 .slider-controls__button::after {
+  content: "";
   position: absolute;
-  top: 13px;
-  left: 13px;
-  content: url("../../images/arrow.svg");
+  top: 12px;
+  left: 14px;
+  width: 12px;
+  height: 20px;
+  background-image: url("../../images/arrow.svg");
+  background-size: contain;
 }
 
 .slider-controls__status {
@@ -43,7 +47,48 @@
 }
 
 .slider-controls__button_type_next::after {
-  top: 8px;
-  left: 17px;
+  top: 12px;
+  left: 19px;
   transform: rotate(180deg);
+}
+
+.slider-controls__buttons-container {
+  display: flex;
+  gap: 6px;
+}
+
+.slider-controls__circle-button {
+  width: 10px;
+  height: 10px;
+  border: none;
+  outline: none;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-controls__circle-button_active {
+  background: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .slider-controls__button {
+    width: 36px;
+    height: 36px;
+  }
+  .slider-controls__button::after {
+    content: "";
+    width: 10px;
+    height: 18px;
+    background-image: url("../../images/arrow.svg");
+    background-size: contain;
+    top: 10px;
+    left: 11px;
+  }
+  .slider-controls__button_type_next::after {
+    top: 9px;
+    left: 16px;
+  }
+
 }
