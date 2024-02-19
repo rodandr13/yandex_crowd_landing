@@ -33,6 +33,10 @@
   left: -10px;
 }
 
+.transformation__slider-controls {
+  display: none;
+}
+
 
 
 @media screen and (max-width: 800px) {
