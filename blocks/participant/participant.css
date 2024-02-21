@@ -5,6 +5,7 @@
   align-items: center;
   flex-shrink: 0;
   width: 394px;
+  scroll-snap-align: start;
 }
 
 .participant__photo {

@@ -30,13 +30,21 @@
 .participants__container {
   position: relative;
   overflow: hidden;
-
-
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+.participants__container::-webkit-scrollbar {
+  display: none;
+}
+
 .participants__slider-controls {
   position: absolute;
   right: 0;
   top: -114px;
+  width: 152px;
 }
 
 @media screen and (max-width: 1350px) {
@@ -64,6 +72,9 @@
 @media screen and (max-width: 600px) {
   .participants {
     padding: 20px 20px 140px 20px;
+  }
+  .participants__slider-controls {
+    width: 134px;
   }
 }
 

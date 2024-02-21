@@ -13,21 +13,39 @@ let currentIndex = 0;
 countParticipants.textContent = `${participantsLength}`;
 
 updateButtonState();
+updateIndicator(currentIndex, calculateVisibleParticipants(participantsList.offsetWidth, participant.offsetWidth), participants.length);
+
+
 nextButton.addEventListener('click', () => {
-  currentIndex++;
-  participantsList.style.transform = `translateX(-${currentIndex * participant.offsetWidth}px)`;
+  const visibleItems = calculateVisibleParticipants(participantsList.offsetWidth, participant.offsetWidth);
+  currentIndex += visibleItems;
+  currentIndex = Math.min(currentIndex, participantsLength - visibleItems);
+  const offset = currentIndex * (participant.offsetWidth + (window.innerWidth > 1350 ? 20 : 0));
+  participantsList.style.transform = `translateX(-${offset}px)`;
   updateButtonState();
-  console.log(currentIndex)
+  updateIndicator(currentIndex, calculateVisibleParticipants(participantsList.offsetWidth, participant.offsetWidth), participants.length);
 });
 
 prevButton.addEventListener('click', () => {
-  currentIndex--;
-  participantsList.style.transform = `translateX(-${currentIndex * participant.offsetWidth}px)`;
+  const visibleItems = calculateVisibleParticipants(participantsList.offsetWidth, participant.offsetWidth);
+  currentIndex -= visibleItems;
+  currentIndex = Math.min(currentIndex, participantsLength - visibleItems);
+  const offset = currentIndex * (participant.offsetWidth + (window.innerWidth > 1350 ? 20 : 0));
+  participantsList.style.transform = `translateX(-${offset}px)`;
   updateButtonState();
-  console.log(currentIndex)
+  updateIndicator(currentIndex, calculateVisibleParticipants(participantsList.offsetWidth, participant.offsetWidth), participants.length);
+
 })
 
 function calculateVisibleParticipants(containerWidth, itemWidth) {
+  const windowWidth = window.innerWidth;
+  let gap = 0;
+
+  if (windowWidth > 1350) {
+    gap = 20;
+  }
+
+  const totalItemWidth = itemWidth + gap * (participantsLength - 1);
   const tolerance = 0.05;
   const exactCount = containerWidth / itemWidth;
   const roundedCount = Math.floor(exactCount);
@@ -41,6 +59,11 @@ function calculateVisibleParticipants(containerWidth, itemWidth) {
   }
 }
 
+function updateIndicator(currentIndex, visibleItemsCount, totalItemsCount) {
+  const endIndex = Math.min(currentIndex + visibleItemsCount, totalItemsCount);
+  currentParticipants.textContent = `${endIndex}`;
+}
+
 function updateButtonState() {
   const visibleItemsCount = calculateVisibleParticipants(participantsList.offsetWidth, participant.offsetWidth);
   prevButton.disabled = currentIndex <= 0;
@@ -50,15 +73,16 @@ function updateButtonState() {
 window.addEventListener('resize', () => {
   const visibleItems = calculateVisibleParticipants(participantsList.offsetWidth, participant.offsetWidth);
   currentParticipants.textContent = `${visibleItems}`;
-  updateButtonState();
-
-  const newOffset = currentIndex * participant.offsetWidth;
-  participantsList.style.transform = `translateX(-${newOffset}px)`;
 
   const maxIndex = participantsLength - visibleItems;
   if (currentIndex > maxIndex) {
-    currentIndex = maxIndex;
-    participantsList.style.transform = `translateX(-${currentIndex * participant.offsetWidth}px)`;
+    currentIndex = Math.max(0, maxIndex);
   }
+
+  const gap = window.innerWidth > 1350 ? 20 : 0;
+  const offset = currentIndex * (participant.offsetWidth + gap);
+  participantsList.style.transform = `translateX(-${offset}px)`;
+
   updateButtonState();
+  updateIndicator(currentIndex, visibleItems, participants.length);
 });
