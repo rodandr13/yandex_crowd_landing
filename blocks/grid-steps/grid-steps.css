@@ -79,6 +79,9 @@
   position: relative;
 }
 
+.grid-steps__step_visible {
+  visibility: visible;
+}
 /*.grid-steps::after {*/
 /*  content: url("../../images/airplane.png");*/
 /*  position: absolute;*/
@@ -136,13 +139,15 @@
 
 @media screen and (max-width: 680px) {
   .grid-steps {
-    height: 200px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: unset;
-    padding-top: 50px;
-    padding-left: 20px;
     gap: 0;
+    box-sizing: border-box;
+    height: 300px;
+    margin: 0;
+    padding: 48px 0 14px 0;
+    outline: 1px solid red;
   }
   /*.grid-steps::after {*/
   /*  content: url("../../images/airplane.png");*/
@@ -161,18 +166,6 @@
   }
   .grid-steps__step:nth-child(3), .grid-steps__step:nth-child(4), .grid-steps__step:nth-child(5), .grid-steps__step:nth-child(6), .grid-steps__step:nth-child(7) {
     grid-area: auto;
-
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .grid-steps {
-    box-sizing: border-box;
-    width: 335px;
-    height: 300px;
-    margin: 0;
-    padding: 48px 0 0 0;
-    outline: 1px solid red;
   }
   .grid-steps__step {
     margin: 0;
@@ -180,6 +173,7 @@
     padding-bottom: 14px;
     font-size: 18px;
     line-height: 21.8px;
+    visibility: hidden;
   }
   .grid-steps__step::before {
     top: 12px;

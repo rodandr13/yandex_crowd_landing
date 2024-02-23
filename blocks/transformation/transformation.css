@@ -29,8 +29,8 @@
 .transformation__steps-container::after {
   content: url("../../images/airplane.png");
   position: absolute;
-  top: -165px;
-  left: -10px;
+  bottom: -5px;
+  right: -64px;
 }
 
 .transformation__slider-controls {
@@ -45,7 +45,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
   .transformation {
     padding: 20px 20px 100px 20px;
   }
@@ -59,5 +59,10 @@
   .transformation__slider-controls {
     justify-content: center;
     margin: 28px 0 0 0;
+  }
+  .transformation__steps-container::after {
+    top: -160px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
