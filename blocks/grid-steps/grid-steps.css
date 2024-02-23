@@ -80,7 +80,7 @@
 }
 
 .grid-steps__step_visible {
-  visibility: visible;
+  /*visibility: visible;*/
 }
 /*.grid-steps::after {*/
 /*  content: url("../../images/airplane.png");*/
