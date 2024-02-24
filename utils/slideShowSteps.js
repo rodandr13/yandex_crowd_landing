@@ -1,73 +1,84 @@
 const gridSteps = document.querySelector('.grid-steps');
 const steps = document.querySelectorAll('.grid-steps__step');
+const prevButton = document.querySelector('.slider-controls__button_type_prev');
+const nextButton = document.querySelector('.slider-controls__button_type_next');
+let currentSlideIndex = 0;
+let cachedSlides = calculateSlides();
 
-function slideShowSteps() {
-  const gridStepsStyles = window.getComputedStyle(gridSteps);
-  const gridStepsPaddingTop = parseInt(gridStepsStyles.paddingTop, 10);
-  const gridStepsPaddingBottom = parseInt(gridStepsStyles.paddingBottom, 10);
-  const gridStepsHeight = gridSteps.offsetHeight;
-  const gridStepsHeightWithoutPadding = gridStepsHeight - gridStepsPaddingTop - gridStepsPaddingBottom;
-  let sumStepsHeight = 0;
-  let allStepsFit = true;
-
+function showCurrentSlide() {
+  const slides = cachedSlides;
   steps.forEach((step) => {
-    if (allStepsFit) {
-      let currentHeight = step.offsetHeight;
-      if (currentHeight + sumStepsHeight <= gridStepsHeightWithoutPadding) {
-        sumStepsHeight += currentHeight;
-        step.style.visibility = 'visible';
-      } else {
-        allStepsFit = false;
-        step.style.visibility = 'hidden';
-      }
-    } else {
-      step.style.visibility = 'hidden';
-    }
-  });
+    step.style.visibility = 'hidden';
+    step.style.position = 'absolute';
+  })
+  slides[currentSlideIndex].forEach((step) => {
+    step.style.visibility = 'visible';
+    step.style.position = 'relative';
+  })
 }
 
-slideShowSteps();
 
-function calculateSlidesCount() {
-  const gridSteps = document.querySelector('.grid-steps');
-  const steps = document.querySelectorAll('.grid-steps__step');
+nextButton.addEventListener('click', () => {
+  console.log('click next');
+  if (currentSlideIndex < cachedSlides.length - 1) {
+    currentSlideIndex++;
+    showCurrentSlide();
+  }
+})
+
+prevButton.addEventListener('click', () => {
+  console.log('click prev');
+  if (currentSlideIndex > 0) {
+    currentSlideIndex--;
+    showCurrentSlide();
+  }
+})
+
+showCurrentSlide();
+
+function calculateSlides() {
   const gridStepsStyles = window.getComputedStyle(gridSteps);
   const gridStepsPaddingTop = parseInt(gridStepsStyles.paddingTop, 10);
   const gridStepsPaddingBottom = parseInt(gridStepsStyles.paddingBottom, 10);
   const containerHeight = gridSteps.offsetHeight - gridStepsPaddingBottom - gridStepsPaddingTop;
 
+  const slides = [];
+  let currentSlide = [];
+
   let totalHeight = 0;
-  let slidesCount = 0;
+
   steps.forEach((step) => {
     const stepHeight = step.offsetHeight;
     if (stepHeight > containerHeight / 2) {
-      if (totalHeight > 0) slidesCount++;
-      slidesCount++;
-      totalHeight = 0;
+      if (totalHeight > 0) {
+        slides.push(currentSlide);
+        currentSlide = [];
+        totalHeight = 0;
+      }
+      slides.push([step]);
     } else if (totalHeight + stepHeight > containerHeight) {
-      slidesCount++;
+      slides.push(currentSlide);
+      currentSlide = [step];
       totalHeight = stepHeight;
     } else {
+      currentSlide.push(step);
       totalHeight += stepHeight;
     }
   });
 
-  if (totalHeight > 0) {
-    slidesCount++;
+  if (currentSlide.length > 0) {
+    slides.push(currentSlide);
   }
 
-  return slidesCount;
+  return slides;
 }
-
-console.log('steps', steps.length);
-console.log('calculateSlidesCount', calculateSlidesCount());
 
 function addIndicators() {
   const indicatorContainer = document.querySelector('.slider-controls__buttons-container');
-  const countSlides = calculateSlidesCount();
+  const slides = cachedSlides;
   indicatorContainer.innerHTML = '';
 
-  for (let i = 0; i < countSlides; i++) {
+  for (let i = 0; i < slides.length; i++) {
     const indicator = document.createElement('button');
     indicator.classList.add('slider-controls__circle-button');
     indicator.addEventListener('click', () => {
@@ -78,5 +89,5 @@ function addIndicators() {
 }
 
 addIndicators();
-window.addEventListener('resize', slideShowSteps);
+window.addEventListener('resize', showCurrentSlide);
 

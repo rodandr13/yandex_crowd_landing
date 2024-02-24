@@ -173,7 +173,7 @@
     padding-bottom: 14px;
     font-size: 18px;
     line-height: 21.8px;
-    visibility: hidden;
+    /*visibility: hidden;*/
   }
   .grid-steps__step::before {
     top: 12px;
