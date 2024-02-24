@@ -5,6 +5,36 @@ const nextButton = document.querySelector('.slider-controls__button_type_next');
 let currentSlideIndex = 0;
 let cachedSlides = calculateSlides();
 
+function updateActiveIndicators() {
+  const indicators = document.querySelectorAll('.slider-controls__circle-button');
+
+  indicators.forEach((indicator, index) => {
+    if (index === currentSlideIndex) {
+      indicator.classList.add('slider-controls__circle-button_active');
+    } else {
+      indicator.classList.remove('slider-controls__circle-button_active');
+    }
+  })
+}
+
+function addIndicators() {
+  const indicatorContainer = document.querySelector('.slider-controls__buttons-container');
+  const slides = cachedSlides;
+  indicatorContainer.innerHTML = '';
+
+  for (let i = 0; i < slides.length; i++) {
+    const indicator = document.createElement('button');
+    indicator.classList.add('slider-controls__circle-button');
+    indicator.addEventListener('click', () => {
+      currentSlideIndex = i;
+      showCurrentSlide();
+    })
+    indicatorContainer.appendChild(indicator);
+  }
+
+  updateActiveIndicators();
+}
+
 function showCurrentSlide() {
   const slides = cachedSlides;
   steps.forEach((step) => {
@@ -15,6 +45,10 @@ function showCurrentSlide() {
     step.style.visibility = 'visible';
     step.style.position = 'relative';
   })
+  updateActiveIndicators();
+
+  prevButton.disabled = currentSlideIndex === 0;
+  nextButton.disabled = currentSlideIndex === slides.length - 1;
 }
 
 
@@ -33,7 +67,7 @@ prevButton.addEventListener('click', () => {
     showCurrentSlide();
   }
 })
-
+addIndicators();
 showCurrentSlide();
 
 function calculateSlides() {
@@ -69,25 +103,17 @@ function calculateSlides() {
   if (currentSlide.length > 0) {
     slides.push(currentSlide);
   }
-
   return slides;
 }
 
-function addIndicators() {
-  const indicatorContainer = document.querySelector('.slider-controls__buttons-container');
-  const slides = cachedSlides;
-  indicatorContainer.innerHTML = '';
-
-  for (let i = 0; i < slides.length; i++) {
-    const indicator = document.createElement('button');
-    indicator.classList.add('slider-controls__circle-button');
-    indicator.addEventListener('click', () => {
-      console.log(`click indicator ${i}`);
-    })
-    indicatorContainer.appendChild(indicator);
-  }
+function updateSlidesAndIndicators() {
+  cachedSlides = calculateSlides();
+  currentSlideIndex = Math.min(currentSlideIndex, cachedSlides.length - 1);
+  addIndicators();
+  showCurrentSlide();
 }
 
-addIndicators();
-window.addEventListener('resize', showCurrentSlide);
+
+
+window.addEventListener('resize', updateSlidesAndIndicators);
 
