@@ -27,16 +27,19 @@
   position: relative;
 }
 .transformation__steps-container::after {
-  content: url("../../images/airplane.png");
+  width: 378px;
+  height: 141px;
+  content: "";
+  background: url("../../images/airplane.png") no-repeat;
   position: absolute;
-  bottom: -5px;
-  right: -64px;
+  bottom: 45px;
+  right: -50px;
+  transform: rotate(345deg);
 }
 
 .transformation__slider-controls {
-  /*display: none;*/
+  display: none;
 }
-
 
 
 @media screen and (max-width: 800px) {
@@ -57,6 +60,7 @@
     margin: 0 0 150px 0;
   }
   .transformation__slider-controls {
+    display: block;
     justify-content: center;
     margin: 28px 0 0 0;
   }
@@ -64,5 +68,17 @@
     top: -160px;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .transformation__steps-container::after {
+    width: 318px;
+    height: 124px;
+    top: -94px;
+    left: 20px;
+    transform: rotate(341deg);
+    transform-origin: center center;
+    background-size: contain;
   }
 }

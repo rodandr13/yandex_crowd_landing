@@ -29,6 +29,7 @@
   mix-blend-mode: color-burn;
   z-index: 3;
   background-position-x: center;
+  margin: 0 0 0 -20px;
 }
 
 .intro__background {
@@ -38,9 +39,9 @@
   justify-content: center;
   width: 1628px;
   height: 700px;
-  background:url("../../images/city.png"), url("../../images/chess_1.png"), url("../../images/chess_2.png"), url("../../images/circle.svg");
+  background:url("../../images/city.png"), url("../../images/chess_1.png"), url("../../images/chess_2.png"), url("../../images/circle.png");
   background-repeat: no-repeat;
-  background-position:0 100%, 848px 270px, 1181px 164px, 734px -47px;
+  background-position:0 100%, 848px 270px, 1181px 164px, 734px -64px;
 }
 
 .intro__background-chess {
@@ -113,6 +114,7 @@
   }
   .intro__container-text {
     width: 460px;
+    align-self: center;
   }
 }
 
@@ -144,6 +146,15 @@
 }
 
 @media screen and (max-width: 450px) {
+  .intro__background-chess {
+    height: 774px;
+  }
+  .intro__background-overlay {
+    height: 774px;
+  }
+  .intro__background {
+    height: 774px;
+  }
   .intro {
     height: 774px;
   }

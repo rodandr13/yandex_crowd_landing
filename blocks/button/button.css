@@ -14,13 +14,7 @@
 .button_style_stroke {
   background-color: transparent;
   color: #303030;
-  border: 2px solid #303030;
-}
-
-.button_style_fill-white {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #1f1f1f;
-  border: none;
+  outline: 2px solid #303030;
 }
 
 .button__label {
@@ -30,6 +24,14 @@
   line-height: 20.8px;
   width: 165px;
   display: inline-block;
+}
+
+@media screen and (max-width: 1100px) {
+  .button_style_stroke {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1f1f1f;
+    outline: none;
+  }
 }
 
 @media screen and (max-width: 600px) {

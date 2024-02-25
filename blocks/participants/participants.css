@@ -3,7 +3,7 @@
   box-sizing: border-box;
   max-width: 1366px;
   width: 100%;
-  padding: 102px 72px 140px 72px;
+  padding: 102px 72px 139px 72px;
 }
 
 .participant__more {
@@ -24,7 +24,7 @@
 }
 
 .participants__title {
-  margin: 0 0 60px 0;
+  margin: 0 0 59px 0;
 }
 
 .participants__container {

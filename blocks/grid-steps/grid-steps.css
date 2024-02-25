@@ -139,15 +139,17 @@
 
 @media screen and (max-width: 680px) {
   .grid-steps {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: unset;
+    /*grid-template-columns: 1fr;*/
+    /*grid-template-rows: 1fr 1fr;*/
+    /*grid-template-areas: unset;*/
+    display: flex;
+    flex-direction: column;
     gap: 0;
     box-sizing: border-box;
     height: 300px;
     margin: 0;
     padding: 48px 0 14px 0;
-    outline: 1px solid red;
+    background: url("../../images/steps_bg.jpg");
   }
   /*.grid-steps::after {*/
   /*  content: url("../../images/airplane.png");*/
@@ -173,6 +175,7 @@
     padding-bottom: 14px;
     font-size: 18px;
     line-height: 21.8px;
+    background: none;
     /*visibility: hidden;*/
   }
   .grid-steps__step::before {
