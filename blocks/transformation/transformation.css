@@ -60,25 +60,26 @@
     margin: 0 0 150px 0;
   }
   .transformation__slider-controls {
-    display: block;
+    display: flex;
     justify-content: center;
     margin: 28px 0 0 0;
   }
   .transformation__steps-container::after {
-    top: -160px;
+    width: 318px;
+    height: 124px;
+    transform-origin: center center;
+    background-size: contain;
+    top: -95px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotate(341deg);
   }
 }
 
 @media screen and (max-width: 400px) {
   .transformation__steps-container::after {
-    width: 318px;
-    height: 124px;
     top: -94px;
     left: 20px;
     transform: rotate(341deg);
-    transform-origin: center center;
-    background-size: contain;
+
   }
 }

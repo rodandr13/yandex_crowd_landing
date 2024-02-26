@@ -71,6 +71,9 @@
     justify-content: center;
     gap: 44px;
   }
+  .advertisement__table {
+    margin: 44px 0 40px 0;
+  }
   .advertisement__paragraph {
     display: contents;
   }
@@ -92,9 +95,6 @@
   .advertisement__container {
     gap: 24px;
     width: 100%;
-  }
-  .advertisement__table {
-    margin: 44px 0 40px 0;
   }
   .advertisement__text {
     font-size: 28px;
@@ -119,3 +119,11 @@
     margin: 28px 0 25px 0;
   }
 }
+
+@media screen and (max-width: 374px) {
+  .advertisement__image_style_collage {
+    width: 100%;
+  }
+
+}
+
