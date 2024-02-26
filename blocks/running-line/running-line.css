@@ -11,10 +11,12 @@
 
 .running-line__container {
   display: flex;
-  animation: running-line 11s linear infinite;
   gap: 30px;
-  width: 2322px;
   flex-shrink: 0;
+}
+
+.running-line__animated {
+  animation: running-line 60s linear infinite;
 }
 
 .running-line__text {
