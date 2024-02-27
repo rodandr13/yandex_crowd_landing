@@ -29,6 +29,4 @@
 
 @import url('../blocks/footer/footer.css');
 
-@import url('../blocks/text-align/_type/text-align_type_left.css');
-@import url('../blocks/text-align/_type/text-align_type_center.css');
-@import url('../blocks/text-align/_type/text-align_type_right.css');
+@import url('../blocks/text-align/text-align.css');

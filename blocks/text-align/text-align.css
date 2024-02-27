@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.text-align_type_left {
+  text-align: left;
+}
+
+.text-align_type_right {
+  text-align: right;
+}
+
 @media screen and (max-width: 450px) {
   .text-align_type_center {
     padding-left: 5px;
