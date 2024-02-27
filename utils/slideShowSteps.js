@@ -1,11 +1,11 @@
 import debounce from "./debounce.js";
 
-function createSlider(gridStepsSelector, prevButtonSelector, nextButtonSelector) {
+function createSlideShow(gridStepsSelector) {
   let currentSlideIndex = 0;
   let gridSteps = document.querySelector(gridStepsSelector);
   const steps = gridSteps.querySelectorAll('.grid-steps__step');
-  const prevButton = document.querySelector(prevButtonSelector);
-  const nextButton = document.querySelector(nextButtonSelector);
+  const prevButton = document.querySelector('.slider-controls__button_type_prev');
+  const nextButton = document.querySelector('.slider-controls__button_type_next');
   const indicatorsContainer = document.querySelector('.slider-controls__buttons-container');
   let cachedSlides = calculateSlides(steps);
 
@@ -165,5 +165,5 @@ function createSlider(gridStepsSelector, prevButtonSelector, nextButtonSelector)
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  createSlider('.grid-steps', '.slider-controls__button_type_prev', '.slider-controls__button_type_next');
+  createSlideShow('.grid-steps');
 });
