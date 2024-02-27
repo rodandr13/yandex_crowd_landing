@@ -10,6 +10,7 @@
 @import url('../blocks/slider-controls/slider-controls.css');
 @import url('../blocks/grid-steps/grid-steps.css');
 
+@import url('../blocks/root/root.css');
 
 @import url('../blocks/page/page.css');
 
@@ -28,5 +29,3 @@
 
 
 @import url('../blocks/footer/footer.css');
-
-@import url('../blocks/text-align/text-align.css');

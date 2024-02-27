@@ -1,7 +1,7 @@
 .link {
-  color: #3057A2;
+  color: var(--main-link-color);
   font-variant-numeric: lining-nums proportional-nums;
-  font-family: 'Golos Text', sans-serif;
+  font-family: var(--main-font);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -11,7 +11,7 @@
 
 .link_style_outline {
   border-radius: 62px;
-  border: 1px solid #3057a2;
+  border: 1px solid var(--main-link-color);
   padding: 7px 12px;
   -webkit-transition: all 100ms linear;
   -o-transition: all 100ms linear;
@@ -19,8 +19,8 @@
 }
 
 .link_style_outline:hover {
-  background-color: #3057a2;
-  color: #ffffff;
+  background-color: var(--main-link-color);
+  color: var(--main-link-text-color);
 }
 
 @media screen and (max-width: 450px) {

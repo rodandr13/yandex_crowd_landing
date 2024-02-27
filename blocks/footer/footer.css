@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background: #e9ded4;
+  background: var(--background-light-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,7 +18,7 @@
 }
 
 .footer__text {
-  color: #313131;
+  color: var(--main-text-color);
   font-variant-numeric: lining-nums proportional-nums;
   font-family: "Golos Text", sans-serif;
   font-size: 16px;

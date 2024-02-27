@@ -13,7 +13,7 @@
 .logo__title {
   font-weight: 700;
   width: 147px;
-  color: #595653;
+  color: var(--logo-color);
   font-size: 16.651px;
   line-height: 17.853px;
   text-transform: uppercase;

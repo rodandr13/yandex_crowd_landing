@@ -1,6 +1,6 @@
 .running-line {
   width: 100%;
-  background: #f54932;
+  background: var(--accent-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,16 +24,12 @@
   -webkit-animation: running-line 60s linear infinite;
   animation: running-line 60s linear infinite;
 }
-.running-line__animated:hover {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
 
 .running-line__text {
   position: relative;
-  color: #ffffff;
+  color: var(--main-light-text-color);
   display: inline-block;
-  font-family: "Merriweather", serif;
+  font-family: var(--header-font);
   font-size: 22px;
   font-weight: 400;
   text-transform: uppercase;

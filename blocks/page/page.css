@@ -1,11 +1,7 @@
-html {
-  scroll-behavior: smooth;
-}
-
 .page {
-  color: #313131;
+  color: var(--main-text-color);
   min-width: 320px;
-  font-family: 'Golos Text', sans-serif;
+  font-family: var(--main-font);
   font-weight: 400;
   display: -webkit-box;
   display: -ms-flexbox;

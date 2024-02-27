@@ -26,9 +26,9 @@
 .participant__name {
   margin: 4px 0 4px 0;
   padding: 0;
-  color: #313131;
+  color: var(--main-text-color);
   font-variant-numeric: lining-nums proportional-nums;
-  font-family: 'Golos Text', sans-serif;
+  font-family: var(--main-font);
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -39,19 +39,15 @@
 .participant__caption {
   margin: 0 0 20px 0;
   padding: 0;
-  color: #313131;
+  color: var(--main-text-color);
   font-variant-numeric: lining-nums proportional-nums;
-  font-family: 'Golos Text', sans-serif;
+  font-family: var(--main-font);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   opacity: 0.6;
   text-align: center;
-}
-
-.participant__more {
-
 }
 
 @media screen and (max-width: 1350px) {

@@ -23,7 +23,7 @@
   padding: 20px 21px 20px 72px;
   counter-increment: custom-counter;
   position: relative;
-  color: #313131;
+  color: var(--main-text-color);
   font-variant-numeric: lining-nums proportional-nums;
   font-family: "Golos Text", sans-serif;
   font-size: 20px;
@@ -44,7 +44,7 @@
   height: 36px;
   background: #ffffff;
   border-radius: 50%;
-  color: #313131;
+  color: var(--main-text-color);
   font-variant-numeric: lining-nums proportional-nums;
   font-size: 20px;
   font-style: normal;
