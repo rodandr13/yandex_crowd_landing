@@ -1,7 +1,13 @@
 .slider-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 14px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -17,6 +23,8 @@
   height: 44px;
   border-radius: 50%;
   font-size: 21px;
+  -webkit-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
   transition: all 100ms linear;
 }
 .slider-controls__button::after {
@@ -38,8 +46,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 19.2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2px;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
 
@@ -54,10 +65,14 @@
 .slider-controls__button_type_next::after {
   top: 12px;
   left: 19px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .slider-controls__buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 6px;
 }
@@ -76,6 +91,8 @@
 
 .slider-controls__circle-button:hover {
   opacity: 0.7;
+  -webkit-transition: opacity 100ms linear;
+  -o-transition: opacity 100ms linear;
   transition: opacity 100ms linear;
 }
 
@@ -98,6 +115,8 @@
 
 .slider-controls__button:hover {
   background: #fbce51;
+  -webkit-transition: background-color 100ms linear;
+  -o-transition: background-color 100ms linear;
   transition: background-color 100ms linear;
 }
 

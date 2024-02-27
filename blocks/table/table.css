@@ -41,7 +41,12 @@
 
 @media screen and (max-width: 600px) {
   .table__line {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 16px 0;
     border-bottom: 1px solid #d0d0d0;
@@ -60,7 +65,11 @@
 
 @media screen and (max-width: 450px) {
   .table__line {
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+    -ms-flex-direction: initial;
     flex-direction: initial;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 12px;
   }

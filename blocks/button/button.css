@@ -1,4 +1,5 @@
 .button {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 263px;
   border-radius: 66px;

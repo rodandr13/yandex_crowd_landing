@@ -1,4 +1,6 @@
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 6.25px;
 }
