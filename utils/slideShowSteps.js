@@ -1,3 +1,5 @@
+import debounce from "./debounce.js";
+
 function createSlider(gridStepsSelector, prevButtonSelector, nextButtonSelector) {
   let currentSlideIndex = 0;
   let gridSteps = document.querySelector(gridStepsSelector);
@@ -141,7 +143,7 @@ function createSlider(gridStepsSelector, prevButtonSelector, nextButtonSelector)
     }
   }
 
-  // Проверяет инициализацию слайдера для ширены менее 680px
+  // Проверяет инициализацию слайдера для ширины менее 680px
   function checkSlideShow() {
     if (window.matchMedia('(max-width: 680px)').matches) {
       if (!isSliderInitialized) {
@@ -157,8 +159,9 @@ function createSlider(gridStepsSelector, prevButtonSelector, nextButtonSelector)
   }
 
   checkSlideShow();
-  window.addEventListener('resize', checkSlideShow);
 
+  const debouncedCheckSlideShow = debounce(checkSlideShow, 150);
+  window.addEventListener('resize', debouncedCheckSlideShow);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
