@@ -27,6 +27,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+  transition: opacity 250ms ease-in-out;
 }
 
 .grid-steps__step::before {
@@ -79,17 +80,6 @@
   position: relative;
 }
 
-.grid-steps__step_visible {
-  /*visibility: visible;*/
-}
-/*.grid-steps::after {*/
-/*  content: url("../../images/airplane.png");*/
-/*  position: absolute;*/
-/*  bottom: -7px;*/
-/*  right: -64px;*/
-/*}*/
-
-
 @media screen and (max-width: 1360px) {
   .grid-steps__step:nth-child(7) {
     padding-right: 315px;
@@ -102,9 +92,6 @@
     "step5 step6"
     "step7 step7";
   }
-  /*.grid-steps::after {*/
-  /*  bottom: -47px;*/
-  /*}*/
 }
 
 @media screen and (max-width: 960px) {
@@ -117,9 +104,6 @@
     "step6 step6"
     "step7 step7";
   }
-  /*.grid-steps::after {*/
-  /*  bottom: -17px;*/
-  /*}*/
 }
 
 @media screen and (max-width: 800px) {
@@ -132,16 +116,10 @@
     "step6 step6"
     "step7 step7";
   }
-  /*.grid-steps::after {*/
-  /*  bottom: -7px;*/
-  /*}*/
 }
 
 @media screen and (max-width: 680px) {
   .grid-steps {
-    /*grid-template-columns: 1fr;*/
-    /*grid-template-rows: 1fr 1fr;*/
-    /*grid-template-areas: unset;*/
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -151,14 +129,6 @@
     padding: 48px 0 14px 0;
     background: url("../../images/steps_bg.jpg");
   }
-  /*.grid-steps::after {*/
-  /*  content: url("../../images/airplane.png");*/
-  /*  position: absolute;*/
-  /*  top: -150px;*/
-  /*  left: 10px;*/
-  /*  bottom: unset;*/
-  /*  right: unset;*/
-  /*}*/
   .grid-steps__step:nth-child(7) {
     padding-right: 21px;
   }
@@ -176,7 +146,6 @@
     font-size: 18px;
     line-height: 21.8px;
     background: none;
-    /*visibility: hidden;*/
   }
   .grid-steps__step::before {
     top: 12px;

@@ -15,9 +15,11 @@ function createSlideShow(gridStepsSelector) {
     steps.forEach((step) => {
       step.style.visibility = 'hidden';
       step.style.position = 'absolute';
+      step.style.opacity = '0';
     });
 
     cachedSlides[currentSlideIndex].forEach((step) => {
+      step.style.opacity = '1';
       step.style.visibility = 'visible';
       step.style.position = 'relative';
     });
@@ -117,6 +119,7 @@ function createSlideShow(gridStepsSelector) {
       steps.forEach(step => {
         step.style.visibility = '';
         step.style.position = '';
+        step.style.opacity = '';
       });
       if (eventListenersAdded) {
         nextButton.removeEventListener('click', nextSlide);

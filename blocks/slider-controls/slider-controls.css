@@ -17,6 +17,7 @@
   height: 44px;
   border-radius: 50%;
   font-size: 21px;
+  transition: all 100ms linear;
 }
 .slider-controls__button::after {
   content: "";

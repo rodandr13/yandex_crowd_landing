@@ -18,6 +18,9 @@
 .running-line__animated {
   animation: running-line 60s linear infinite;
 }
+.running-line__animated:hover {
+  animation-play-state: paused;
+}
 
 .running-line__text {
   position: relative;

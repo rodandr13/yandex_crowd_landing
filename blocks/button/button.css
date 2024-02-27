@@ -10,11 +10,20 @@
   cursor: pointer;
   text-align: center;
 }
+.button:hover {
+  background-color: #fbce51;
+  color: #1f1f1f;
+}
 
 .button_style_stroke {
   background-color: transparent;
   color: #303030;
   outline: 2px solid #303030;
+}
+
+.button_style_stroke:hover {
+  background-color: #1f1f1f;
+  color: #ffffff;
 }
 
 .button__label {
